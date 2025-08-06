@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+PRODUCT_NAME = chat_app_test
+
+
+PRODUCT_BUNDLE_IDENTIFIER = com.example.chatAppTest
+
+
+PRODUCT_COPYRIGHT = Copyright © 2025 com.example. All rights reserved.
