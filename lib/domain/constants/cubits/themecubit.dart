@@ -5,6 +5,7 @@ class ThemeCubit extends Cubit<ThemeStates> {
   ThemeCubit() : super(LightThemeStates());
 
   void toggletheme() {
+    
     if (state is LightThemeStates) {
       emit(DarkThemeStates());
     } else {

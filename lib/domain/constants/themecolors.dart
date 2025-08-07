@@ -17,8 +17,8 @@ class ThemeColors {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(backgroundColor: AppColors.btnDark),
     ),
-    scaffoldBackgroundColor: AppColors.lightTheme,
-    brightness: Brightness.light,
+    scaffoldBackgroundColor: AppColors.darkTheme,
+    brightness: Brightness.dark,
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: AppColors.textdarkTheme),
       bodySmall: TextStyle(color: AppColors.textdarkTheme),
