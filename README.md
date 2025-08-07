@@ -1,6 +1,7 @@
 # chat_app_test
 
-A new Flutter project.
+Chat App (Flutter + BLoC + Firebase)
+This is a modern and responsive Chat Application built with Flutter. It features a clean architecture using BLoC (Cubit) for efficient state management. The app supports Dark & Light Mode, User Authentication (Login & Signup), and a fully functional Chat Interface for real-time messaging. The project is designed to be scalable, maintainable, and easily extendable for future features.
 
 ## Getting Started
 
