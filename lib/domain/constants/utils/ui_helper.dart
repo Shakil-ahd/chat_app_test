@@ -11,7 +11,8 @@ class UiHelper {
     required double fontSize,
     String? fontFamily,
     FontWeight? fontWeight,
-    Color? color, required BuildContext context,
+    Color? color,
+    required BuildContext context,
   }) {
     return Text(
       text,
@@ -37,7 +38,9 @@ class UiHelper {
       height: 52,
       width: 327,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          callback();
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.btnLight,
           shape: RoundedRectangleBorder(
@@ -50,6 +53,44 @@ class UiHelper {
             fontSize: 16,
             fontWeight: FontWeight.w300,
             color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+
+  static CustomTextField({
+    required TextEditingController controller,
+    required String text,
+    required TextInputType textinputType,
+    required BuildContext context,
+  }) {
+    return Container(
+      height: 36,
+      width: 350,
+      decoration: BoxDecoration(
+        color: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.containerdarkTheme
+            : AppColors.containerlightTheme,
+        borderRadius: BorderRadius.circular(7),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10),
+        child: Center(
+          child: TextField(
+            controller: controller,
+            keyboardType: textinputType,
+            decoration: InputDecoration(
+              hintText: text,
+              hintStyle: TextStyle(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? AppColors.hintTextdark
+                    : AppColors.hintTextlight,
+                fontSize: 14,
+              ),
+              contentPadding: const EdgeInsets.symmetric(vertical: 11),
+              border: InputBorder.none,
+            ),
           ),
         ),
       ),

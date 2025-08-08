@@ -1,5 +1,7 @@
+import 'package:chat_app_test/domain/constants/appcolors.dart';
 import 'package:chat_app_test/domain/constants/cubits/themecubit.dart';
 import 'package:chat_app_test/domain/constants/utils/ui_helper.dart';
+import 'package:chat_app_test/repository/screens/loginpage/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,7 +11,11 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( actions: [
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.darkTheme
+            : AppColors.lightTheme,
+        actions: [
           IconButton(
             onPressed: () {
               BlocProvider.of<ThemeCubit>(context).toggletheme();
@@ -17,7 +23,7 @@ class OnboardingScreen extends StatelessWidget {
             icon: Icon(Icons.dark_mode_outlined),
           ),
         ],
-),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -28,26 +34,35 @@ class OnboardingScreen extends StatelessWidget {
               text: "Connect easily with",
               fontSize: 24,
               fontFamily: "bold",
-              fontWeight: FontWeight.bold,context:context,
+              fontWeight: FontWeight.bold,
+              context: context,
             ),
             UiHelper.CustomText(
               text: "your family and friends",
               fontSize: 24,
               fontFamily: "bold",
-              fontWeight: FontWeight.bold,context:context,
+              fontWeight: FontWeight.bold,
+              context: context,
             ),
             UiHelper.CustomText(
               text: "over countries",
               fontSize: 24,
               fontFamily: "bold",
-              fontWeight: FontWeight.bold,context:context,
+              fontWeight: FontWeight.bold,
+              context: context,
             ),
           ],
         ),
       ),
       floatingActionButton: UiHelper.CustomButton(
         btnName: "Start Messaging",
-        callback: () {},
+        callback: () {
+          print("Hello");
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginScreen()),
+          );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
