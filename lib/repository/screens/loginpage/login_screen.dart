@@ -1,4 +1,7 @@
+import 'package:chat_app_test/domain/constants/appcolors.dart';
 import 'package:chat_app_test/domain/constants/utils/ui_helper.dart';
+import 'package:chat_app_test/repository/screens/otp/otp_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -7,6 +10,17 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.darkTheme
+            : AppColors.lightTheme,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(CupertinoIcons.back, size: 14),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +52,15 @@ class LoginScreen extends StatelessWidget {
               context: context,
             ),
             SizedBox(height: 50),
-            UiHelper.CustomButton(btnName: "Continue", callback: () {}),
+            UiHelper.CustomButton(
+              btnName: "Continue",
+              callback: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => OtpScreen()),
+                );
+              },
+            ),
           ],
         ),
       ),

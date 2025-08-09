@@ -13,5 +13,8 @@ static const Color containerlightTheme = Color(0XFFF7F7FC);
 static const Color containerdarkTheme = Color(0XFF152033);
 static const Color hintTextlight =Color(0XFFADB5BD);
 static const Color hintTextdark =Color(0XFFF7F7FC);
-
+static const Color otplightTheme =Color(0XFFEDEDED);
+static const Color otpdarkTheme =Color(0XFF152033);
+static const Color textBtnLight = Color(0XFF002DE3);
+static const Color textBtnDark = Color(0XFFF7F7FC);
 }

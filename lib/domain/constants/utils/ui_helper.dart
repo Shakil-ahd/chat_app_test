@@ -67,12 +67,12 @@ class UiHelper {
   }) {
     return Container(
       height: 36,
-      width: 350,
+      width: 327,
       decoration: BoxDecoration(
         color: Theme.of(context).brightness == Brightness.dark
             ? AppColors.containerdarkTheme
             : AppColors.containerlightTheme,
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(3),
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 10),
