@@ -4,7 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  TextEditingController _firstnameController = TextEditingController();
+  TextEditingController _lastnameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +16,9 @@ class ProfileScreen extends StatelessWidget {
           fontSize: 18,
           context: context,
           fontFamily: 'bold',
-          color:Theme.of(context).brightness == Brightness.dark
+          color: Theme.of(context).brightness == Brightness.dark
               ? AppColors.textdarkTheme
               : AppColors.textlightTheme,
-          
         ),
         leading: IconButton(
           onPressed: () {
@@ -26,11 +26,40 @@ class ProfileScreen extends StatelessWidget {
           },
           icon: Icon(CupertinoIcons.back, size: 14),
         ),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.darkTheme
+            : AppColors.lightTheme,
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Theme.of(context).brightness == Brightness.dark
+                ? UiHelper.CustomImage(imgUrl: "darkProfile.png")
+                : UiHelper.CustomImage(imgUrl: "light.png"),
 
-      backgroundColor: Theme.of(context).brightness == Brightness.dark
-          ? AppColors.darkTheme
-          : AppColors.lightTheme,
+            SizedBox(height: 30),
+            UiHelper.CustomTextField(
+              controller: _firstnameController,
+              text: "First Name (Required)",
+              textinputType: TextInputType.name,
+              context: context,
+            ),
+            SizedBox(height: 20),
+            UiHelper.CustomTextField(
+              controller: _firstnameController,
+              text: "Last Name (Optional)",
+              textinputType: TextInputType.name,
+              context: context,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: UiHelper.CustomButton(
+        btnName: "Save",
+        callback: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

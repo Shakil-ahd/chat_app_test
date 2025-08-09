@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
           theme: state is LightThemeStates
               ? ThemeColors.lightTheme
               : ThemeColors.darkTheme,
+           
           home: const OnboardingScreen(),
         );
       },
