@@ -1,5 +1,6 @@
 import 'package:chat_app_test/domain/constants/appcolors.dart';
 import 'package:chat_app_test/domain/constants/utils/ui_helper.dart';
+import 'package:chat_app_test/repository/screens/bottomnav/bottomnav_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +58,9 @@ class ProfileScreen extends StatelessWidget {
       ),
       floatingActionButton: UiHelper.CustomButton(
         btnName: "Save",
-        callback: () {},
+        callback: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomnavScreen()));
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
