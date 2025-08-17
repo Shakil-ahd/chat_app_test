@@ -46,7 +46,7 @@ class OtpScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(CupertinoIcons.back, size: 14),
+          icon: const Icon(CupertinoIcons.back, size: 14),
         ),
       ),
       body: Center(
@@ -60,19 +60,19 @@ class OtpScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
               context: context,
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             UiHelper.CustomText(
               text: "We have sent you an SMS with the code",
               fontSize: 14,
               context: context,
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             UiHelper.CustomText(
               text: "to +62 1309 - 1710 - 1920",
               fontSize: 14,
               context: context,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Pinput(

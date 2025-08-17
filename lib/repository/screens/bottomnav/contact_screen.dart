@@ -14,7 +14,7 @@ class ContactScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? AppColors.darkTheme
             : AppColors.lightTheme,
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
         title: UiHelper.CustomText(
           text: 'Contacts',
           fontSize: 18,

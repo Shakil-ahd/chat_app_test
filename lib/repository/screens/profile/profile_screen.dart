@@ -5,8 +5,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
-  TextEditingController _firstnameController = TextEditingController();
-  TextEditingController _lastnameController = TextEditingController();
+  final TextEditingController _firstnameController = TextEditingController();
+  final TextEditingController _lastnameController = TextEditingController();
+
+  ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(CupertinoIcons.back, size: 14),
+          icon: const Icon(CupertinoIcons.back, size: 14),
         ),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? AppColors.darkTheme
@@ -39,16 +41,16 @@ class ProfileScreen extends StatelessWidget {
                 ? UiHelper.CustomImage(imgUrl: "darkProfile.png")
                 : UiHelper.CustomImage(imgUrl: "light.png"),
 
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             UiHelper.CustomTextField(
               controller: _firstnameController,
               text: "First Name (Required)",
               textinputType: TextInputType.name,
               context: context,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             UiHelper.CustomTextField(
-              controller: _firstnameController,
+              controller: _lastnameController,
               text: "Last Name (Optional)",
               textinputType: TextInputType.name,
               context: context,
@@ -59,7 +61,10 @@ class ProfileScreen extends StatelessWidget {
       floatingActionButton: UiHelper.CustomButton(
         btnName: "Save",
         callback: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomnavScreen()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const BottomnavScreen()),
+          );
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
