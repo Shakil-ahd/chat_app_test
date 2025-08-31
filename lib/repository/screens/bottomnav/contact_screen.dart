@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class ContactScreen extends StatelessWidget {
   TextEditingController searchController = TextEditingController();
 
+  ContactScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

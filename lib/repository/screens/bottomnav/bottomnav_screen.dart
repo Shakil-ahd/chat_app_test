@@ -14,21 +14,21 @@ class BottomnavScreen extends StatefulWidget {
 
 class _BottomnavScreenState extends State<BottomnavScreen> {
   int currentIndex = 0;
-  List<Widget> pages = [ContactScreen(), ChatScreen(), MoreSceen()];
+  List<Widget> pages = [ContactScreen(), const ChatScreen(), const MoreSceen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.person_2_alt),
             label: "Contact",
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.chat_bubble_fill),
             label: "Chat",
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: "More"),
+          const BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: "More"),
         ],
         currentIndex: currentIndex,
         onTap: (value) {
@@ -47,7 +47,7 @@ class _BottomnavScreenState extends State<BottomnavScreen> {
               : AppColors.navIconLight,
         ),
       ),
-      body: IndexedStack(children: pages, index: currentIndex),
+      body: IndexedStack(index: currentIndex, children: pages),
     );
   }
 }
